@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/Dropbox/private/documentos/apresentacaoCriptografiaFractalKryptos/algCri.py.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v10">
+<meta name="syntax" content="python">
+<meta name="settings" content="use_css,pre_wrap">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000; }
+body { font-family: monospace; color: #ffffff; background-color: #000000; }
+.Comment { color: #8080ff; }
+.Constant { color: #60FF73; }
+.Identifier { color: #00ffff; }
+.Statement { color: #ffff00; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="Statement">def</span> <span class="Identifier">alloc</span>(n):
+    i=<span class="Constant">0</span>
+    ret=[]
+    <span class="Statement">while</span>(i&lt;n):
+        ret.append(<span class="Identifier">None</span>)
+        i=i+<span class="Constant">1</span>
+
+    <span class="Statement">return</span> ret
+
+v=[<span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>]
+
+s=[<span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>,
+   <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>,
+   <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>,
+   <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>,
+   <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>,
+   <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>,
+   <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>,
+   <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>]
+
+c=alloc(<span class="Identifier">len</span>(v))
+a1=<span class="Constant">0</span>
+a2=<span class="Constant">0</span>
+a3=<span class="Constant">0</span>
+<span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Constant">43</span>):
+    a1=a1+((<span class="Constant">2</span>**i)*s[i])
+
+<span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Constant">43</span>):
+    a2=a2+((<span class="Constant">2</span>**i)*s[i+<span class="Constant">43</span>])
+
+<span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Constant">42</span>):
+    a3=a3+((<span class="Constant">2</span>**i)*s[i+<span class="Constant">86</span>])
+
+lambda1=<span class="Constant">2</span>**<span class="Constant">64</span>
+
+b=<span class="Constant">49191317529892137642</span>
+p=<span class="Constant">28</span>*lambda1
+o=<span class="Constant">10</span>*lambda1
+
+w=<span class="Constant">2000</span>
+
+<span class="Comment">#============calcula o numero de iteracoes necessarias============</span>
+<span class="Comment">#============necessario para criar os vetores que=================</span>
+<span class="Comment">#============guardam a evolucao das variveis x,y,z================</span>
+ite=w*<span class="Identifier">len</span>(v)
+x=alloc(ite+<span class="Constant">1</span>)
+y=alloc(ite+<span class="Constant">1</span>)
+z=alloc(ite+<span class="Constant">1</span>)
+<span class="Comment">#======================fim==================</span>
+
+dt=<span class="Constant">184467440737095516</span>
+
+x[<span class="Constant">0</span>]=(<span class="Constant">3</span>*lambda1)+a1
+y[<span class="Constant">0</span>]=(<span class="Constant">5</span>*lambda1)+a2
+z[<span class="Constant">0</span>]=(<span class="Constant">7</span>*lambda1)+a3
+
+<span class="Statement">for</span> n <span class="Statement">in</span> <span class="Identifier">range</span>(ite):
+    x[n+<span class="Constant">1</span>]=x[n]+((dt*((o*(y[n]-x[n]))&gt;&gt;<span class="Constant">64</span>))&gt;&gt;<span class="Constant">64</span>)
+    y[n+<span class="Constant">1</span>]=y[n]+((dt*(((x[n]*(p-z[n]))&gt;&gt;<span class="Constant">64</span>)-y[n]))&gt;&gt;<span class="Constant">64</span>)
+    z[n+<span class="Constant">1</span>]=z[n]+((dt*(((x[n]*y[n])&gt;&gt;<span class="Constant">64</span>)-((b*z[n])&gt;&gt;<span class="Constant">64</span>)))&gt;&gt;<span class="Constant">64</span>)
+
+<span class="Statement">for</span> j <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Identifier">len</span>(c)):
+    c[j]=v[j]^(x[j*w]&amp;<span class="Constant">1</span>)
+
+<span class="Comment">#============imprime o valor c[j] na tela=========================</span>
+<span class="Statement">for</span> cj <span class="Statement">in</span> c:
+    <span class="Identifier">print</span> <span class="Identifier">str</span>(cj)+<span class="Constant">&quot;,&quot;</span>,
+<span class="Comment">#======================fim==================</span>
+</pre>
+</body>
+</html>

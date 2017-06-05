@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+	<meta charset="utf-8">
+        
+		<title>reveal.js - The HTML Presentation Framework</title>
+                
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+                
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+                
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/meu.css" id="theme">
+                
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+                
+                
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+		    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+                
+        <style type="text/css">
+            .reveal .slides p.left {
+            text-align: left;
+            }
+            video{
+            font-size: 10%;
+            font: inherit;
+            }
+            pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000;  }
+            .Comment { color: #8080ff; }
+            .Constant { color: #60FF73; }
+            .Identifier { color: #00ffff; }
+            .Statement { color: #ffff00; }
+            .reveal pre{
+             margin-left: 3.5%;
+            margin-right: 2%;
+            border-width: 1px;
+            border-left-style: solid;
+            border-color: #00FDDF;
+            padding-left: 0.5%;
+            padding-top: 0.5%;
+            }
+        </style>
+	<!--[if lt IE 9]>
+	    <script src="lib/js/html5shiv.js"></script>
+	    <![endif]-->
+	<script type="text/javascript" src="js/jquery.js"> </script>
+	<script type="text/javascript">
+	    $(document).ready(function (){
+	    $("#imgSensibilidade").width(Math.round($("#tituloSensibilidade").width()));
+	    $("#imgSensibilidade").height(Math.round(($(window).height()-$("#tituloSensibilidade").height()-$(".controls").height())*0.8));
+	    $("div#imgSensibilidade").css("max-width",Math.round($("#tituloSensibilidade").width())+"px");
+	    $("div#imgSensibilidade").css("max-height",Math.round((($(window).height()-$("#tituloSensibilidade").height()-$(".controls").height())*0.8))+"px");
+	    $(window).resize(function(){
+	    $("#imgSensibilidade").width(Math.round($("#tituloSensibilidade").width()));
+	    $("#imgSensibilidade").height(Math.round(($(window).height()-$("#tituloSensibilidade").height()-$(".controls").height())*0.8));
+	    $("#imgSensibilidade").css("max-width",Math.round($("#tituloSensibilidade").width())+"px");
+	    $("#imgSensibilidade").css("max-height",Math.round((($(window).height()-$("#tituloSensibilidade").height()-$(".controls").height())*0.8))+"px");
+	    });
+	    });
+	</script>
+	</head>
+    
+    <body>
+
+	<div class="reveal">
+            
+	    <!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			    <section>
+				<h1>Criptografia</h1>
+                                <h3> a partir do Caos</h3>
+					<p>
+					    <small><a href="javascript: void(0)">Anderson Gonçalves Marco</a> / <a href="javascript: void(0)">anderson.marco@gmail.com</a></small>
+					</p>
+				</section>
+                            
+			    <section class="initVideo">
+				<h2>Sobre mim</h2>
+				    <p class="left">
+                                        Formado em 2012: <img style="vertical-align:middle; border-color:#fff" width="100px" src="imgs/logo-icmc.jpg">
+                                    </p>
+				    <p class="left"> Áreas de pesquisa em:</p>  <div style="padding-left:25%; margin-top:-5.5%;" >
+                                        <ul>
+                                            <li>Criptografia</li>
+                                            <li>Caos</li>
+                                                                        <li>Programação paralela / GPU</li>
+                                            <li>Mecânica dos sólidos</li>
+                                            <li>Visão computacional</li>
+                                        </ul>
+                                                                </div>
+				<p class="left">
+                                    Trabalho: <img style="vertical-align:middle; border: none;" width="100px" src="imgs/logo-voxage.jpg">
+                                    
+					</p>
+				<p class="left">
+                                    Laboratórios: <img style="vertical-align:middle; border: none; margin-right:2%;" width="100px" src="imgs/logo-netef.jpg">
+                                      <img style="vertical-align:middle; border: none;" width="100px" src="imgs/logo-lcad.png"> &nbsp &nbsp SCG
+				</p>
+				<aside class="notes">
+				    Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+				</aside>
+			    </section>
+                            
+				<section>
+                                    <h2>Tópicos</h2>
+                                    <ul>
+                        <li>Criptografia</li>
+                        <li>Caos</li>
+                        <li>Criptografia caótica</li>
+                    </ul>
+				</section>
+				<!-- Example of nested vertical slides -->
+                                <section>
+                    <section data-background="#007777" >
+		        <h2>Criptografia</h2>
+      		    </section>
+                    <section>
+                        <h2>Origens</h2>
+                        <p>Tão antiga quanto a escrita.</p>
+                        <table>
+                            <tr>
+                                <td style="vertical-align: middle;"><img src="imgs/escritaCuleiforme.jpg"> </td> <td style="vertical-align: middle;"><img src="imgs/escritaEgipsea.jpg"> </td> <td style="vertical-align: middle;"><img src="imgs/escritaPersa.jpg"> </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Criptografias simetricas</h2>
+                        <p>Uma chave uma cifra. <br> <br></p>
+                        <p style="padding-right:10%;"> De dois tipos: </p> <div style="padding-left:25%; margin-top:-5.5%;" >
+                                                <ul>
+                                                    <li>Bloco</li>
+                                                    <li>Fluxo</li>
+                                                </ul>
+                                            </div>
+
+                    </section>
+                    <section>
+                        <h2>One time pad</h2>
+                        <p>Inquebravel, todas querem ser iguais a ela.</p>
+                    </section>
+                </section>
+		<section>
+                    <section data-background="#007777" >
+		        <h2>Caos</h2>
+      		    </section>
+		    <section>
+		        <h2>Isto não é caos</h2>
+                            <video id="video001" class="unicoPlay"  data-autoplay controls preload="auto" width="800" height="480" >
+                                <source src="videos/godOfWarApresentacaoLegenda.webm" type='video/webm' />
+                            </video> 
+
+			<p class="fragment">
+                        </p>
+		    </section>
+
+		    <section>
+			<h2>O que é caos</h2>
+			<p>
+			    Comportamento complexo gerado a partir de regras matemáticas.
+                        </p>
+		    </section>
+		    <section>
+			<h2>Mapa Logístico</h2>
+			<p>
+                            
+			    <img style="border: none; background: none; margin: 0px; box-shadow: none; width:300px;" src='imgs/mapaLogistico.svg'>
+                        </p>
+			<p style="font-size:70%;">Sensível às condições iniciais</p>
+		    </section>
+		    <section>
+			<h2 id="tituloSensibilidade">Sensibilidade às condições iniciais</h2>
+			<p>
+			    <img style="border: none; background: none; margin: 0px; box-shadow: none; width:300px;" src='imgs/sensibilidadeX0.svg'>
+                            <img style="border: none; background: none; margin: 0px; box-shadow: none; max-width:none; max-height:none; width:1000px;" src='imgs/sensibilidadeP1.svg'>
+                        </p>
+		    </section>
+                    <section>
+			<h2 id="tituloSensibilidade">Sensibilidade às condições iniciais</h2>
+			<p>
+			    <img style="border: none; background: none; margin: 0px; box-shadow: none; width:300px;" src='imgs/sensibilidadeX0.svg'>
+                            <img style="border: none; background: none; margin: 0px; box-shadow: none; max-width:none; max-height:none; width:1000px;" src='imgs/sensibilidadeP2.svg'>
+                        </p>
+		    </section>
+                    <section>
+			<h2 id="tituloSensibilidade">Sensibilidade às condições iniciais</h2>
+			<p>
+			    <img style="border: none; background: none; margin: 0px; box-shadow: none; width:300px;" src='imgs/sensibilidadeX0.svg'>
+                            <img style="border: none; background: none; margin: 0px; box-shadow: none; max-width:none; max-height:none; width:1000px;" src='imgs/sensibilidadeP3.svg'>
+                        </p>
+		    </section>
+                    <section>
+			<h2 id="tituloSensibilidade">Sensibilidade às condições iniciais</h2>
+			<p>
+			    <img style="border: none; background: none; margin: 0px; box-shadow: none; width:300px;" src='imgs/sensibilidadeX0.svg'>
+                            <img style="border: none; background: none; margin: 0px; box-shadow: none; max-width:none; max-height:none; width:1000px;" src='imgs/sensibilidadeP4.svg'>
+                        </p>
+		    </section>
+                    <section>
+			<h2 id="tituloSensibilidade">Sensibilidade às condições iniciais</h2>
+			<p>
+			    <img style="border: none; background: none; margin: 0px; box-shadow: none; width:300px;" src='imgs/sensibilidadeX0.svg'>
+                            <img style="border: none; background: none; margin: 0px; box-shadow: none; max-width:none; max-height:none; width:1000px;" src='imgs/sensibilidadeP5.svg'>
+                        </p>
+		    </section>
+                    <section>
+			<h2 id="tituloSensibilidade">Sensibilidade às condições iniciais</h2>
+			<p>
+			    <img style="border: none; background: none; margin: 0px; box-shadow: none; width:300px;" src='imgs/sensibilidadeX0.svg'>
+                            <img style="border: none; background: none; margin: 0px; box-shadow: none; max-width:none; max-height:none; width:1000px;" src='imgs/sensibilidadeP6.svg'>
+                        </p>
+		    </section>
+
+		    <section>
+			<h2>Isto não é fantasia matemática</h2>
+					</section>
+		    <section>
+			<h2>Bilhar quântico</h2>
+			<video id="video0002" class="unicoPlay"  data-autoplay controls preload="auto" width="640" height="480" >
+                            <source src="videos/bilharQuantico.webm" type='video/webm' />
+                        </video>
+                        <p class="fragment">
+                        </p> 
+		    </section>
+            	</section>			
+            	<section>
+	                <section data-background="#007777">
+			    <h2>Criptografia caótica</h2>
+                        </section>	
+	                <section>
+						<h2>Sistema caótico a usar</h2>
+                                                <p>Atrator de lorenz: <img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:250px; vertical-align:top;" src="imgs/lorenzEq.svg"></p>
+                                                <div>
+                                                    <img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:300px; vertical-align:bottom;" src="imgs/lorenzEqP2.svg">, 
+                                                    <div style="display: inline;padding-top:240px;"><img style="padding-left:3%; padding-right:1%;padding-top:3%; border: none; background: none; margin: 0px; box-shadow: none; width:70px; vertical-align:bottom;" src="imgs/lorenzEqP3.svg"></div>,
+                                                    <img style="padding-left:3%;  border: none; background: none; margin: 0px; box-shadow: none; width:80px; vertical-align:bottom;" src="imgs/lorenzEqP4.svg"> 
+                                                </div>
+                        </section>				
+	                <section>
+			    <h2>Ponto fixo</h2>
+                            <p>Forma de mapear em um inteiro a aproximação de um número real, exemplo:<p>
+                                <img style="padding-left:3%;  border: none; background: none; margin: 0px; box-shadow: none; width:800px; vertical-align:bottom;" src="imgs/pontoFixoCon.png">
+                        </section>				
+	                <section>
+			    <h2>Aritmética de ponto fixo</h2>
+                            <p>Soma: <img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:60px; vertical-align:middle;" src="imgs/opSoma.svg"><p>
+                            <p>Subtração: <img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:60px; vertical-align:middle;" src="imgs/opSub.svg"><p>
+                            <p>Multiplicação: <img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:60px; vertical-align:middle;" src="imgs/opMul.svg">
+                                =<img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:80px; vertical-align:bottom;" src="imgs/opMul2.svg"><p>
+                            <p>Divisão: <img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:60px; vertical-align:middle;" src="imgs/opDiv.svg">
+                                =<img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:80px; vertical-align:bottom;" src="imgs/opDiv2.svg"> <p>
+                            <p> <br><img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:300px; vertical-align:middle;" src="imgs/pontoFixoDep.svg"></p>
+                            <p> <br><img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:80px; vertical-align:middle;" src="imgs/pontoFixoLambda.svg"></p>
+                            
+                        </section>				
+                        <section>
+			    <h2>Aritmética de ponto fixo</h2>
+                            <p>Importante:  </p>
+                            <p><img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:400px; vertical-align:middle;" src="imgs/comutatividadeMult.svg"></p>
+                        </section>
+                        <section>
+			    <h2>Senha, Texto plano, Texto cifrado</h2>
+                            <p><img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:800px; vertical-align:middle;" src="imgs/algP1.svg"></p>
+                        </section>
+                        <section>
+                            <h2>Parâmetros do sistema</h2>
+                            <p><img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:800px; vertical-align:middle;" src="imgs/algP3.svg"></p>
+                        </section>
+                        <section>
+                        <h2>Cifrando texto</h2>
+                        <p><img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:800px; vertical-align:middle;" src="imgs/algP4.svg"> </p>
+                        </section>
+                        <section>
+                            <h2>Implementação</h2>
+                            <!-- <iframe src="algCri.py.html" width="840" height="480" scrolling="yes"> </iframe>-->
+<pre>
+<span class="Statement">def</span> <span class="Identifier">alloc</span>(n):
+    i=<span class="Constant">0</span>
+    ret=[]
+    <span class="Statement">while</span>(i&lt;n):
+        ret.append(<span class="Identifier">None</span>)
+        i=i+<span class="Constant">1</span>
+
+    <span class="Statement">return</span> ret
+
+v=[<span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>]
+
+s=[<span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>,
+   <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>,
+   <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>,
+   <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>,
+   <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>,
+   <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>,
+   <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>,
+   <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>, <span class="Constant">0</span>, <span class="Constant">1</span>]
+</pre>
+                        </section>
+                        <section>
+                            <h2>Implementação</h2>
+
+<pre>
+c=alloc(<span class="Identifier">len</span>(v))
+a1=<span class="Constant">0</span>
+a2=<span class="Constant">0</span>
+a3=<span class="Constant">0</span>
+<span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Constant">43</span>):
+    a1=a1+((<span class="Constant">2</span>**i)*s[i])
+
+<span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Constant">43</span>):
+    a2=a2+((<span class="Constant">2</span>**i)*s[i+<span class="Constant">43</span>])
+
+<span class="Statement">for</span> i <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Constant">42</span>):
+    a3=a3+((<span class="Constant">2</span>**i)*s[i+<span class="Constant">86</span>])
+
+lambda1=<span class="Constant">2</span>**<span class="Constant">64</span>
+
+b=<span class="Constant">49191317529892137642</span>
+p=<span class="Constant">28</span>*lambda1
+o=<span class="Constant">10</span>*lambda1
+
+w=<span class="Constant">2000</span>
+</pre>
+                        </section>
+                        <section>
+                            <h2>Implementação</h2>
+                            <div style=" background-color:#000; " >
+                            <div  style="padding-left:0.5%; padding-top: 0.5%; font-family: monospace; color: #B9B9B9;  float: left;font-size: 50%; line-height: 132%;">
+                                1<br>2<br>3<br>4<br> 5<br> 6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>2<br>3<br>4<br> 5<br> 6<br>1<br>2<br>3<br>4<br> 5<br> 6<br>
+                            </div>
+<pre>
+<span class="Comment">#============calcula o numero de iteracoes necessarias============</span>
+<span class="Comment">#============necessario para criar os vetores que=================</span>
+<span class="Comment">#============guardam a evolucao das variveis x,y,z================</span>
+ite=w*<span class="Identifier">len</span>(v)
+x=alloc(ite+<span class="Constant">1</span>)
+y=alloc(ite+<span class="Constant">1</span>)
+z=alloc(ite+<span class="Constant">1</span>)
+<span class="Comment">#======================fim==================</span>
+
+dt=<span class="Constant">184467440737095516</span>
+
+x[<span class="Constant">0</span>]=(<span class="Constant">3</span>*lambda1)+a1
+y[<span class="Constant">0</span>]=(<span class="Constant">5</span>*lambda1)+a2
+z[<span class="Constant">0</span>]=(<span class="Constant">7</span>*lambda1)+a3
+
+<span class="Statement">for</span> n <span class="Statement">in</span> <span class="Identifier">range</span>(ite):
+    x[n+<span class="Constant">1</span>]=x[n]+((dt*((o*(y[n]-x[n]))&gt;&gt;<span class="Constant">64</span>))&gt;&gt;<span class="Constant">64</span>)
+    y[n+<span class="Constant">1</span>]=y[n]+((dt*(((x[n]*(p-z[n]))&gt;&gt;<span class="Constant">64</span>)-y[n]))&gt;&gt;<span class="Constant">64</span>)
+    z[n+<span class="Constant">1</span>]=z[n]+((dt*(((x[n]*y[n])&gt;&gt;<span class="Constant">64</span>)-((b*z[n])&gt;&gt;<span class="Constant">64</span>)))&gt;&gt;<span class="Constant">64</span>)
+
+<span class="Statement">for</span> j <span class="Statement">in</span> <span class="Identifier">range</span>(<span class="Identifier">len</span>(c)):
+    c[j]=v[j]^(x[j*w]&amp;<span class="Constant">1</span>)
+
+</pre>
+                            </div>
+                        </section>
+                        <section>
+                            <h2>Implementação</h2>
+<pre>
+<span class="Comment">#============imprime o valor c[j] na tela=========================</span>
+<span class="Statement">for</span> cj <span class="Statement">in</span> c:
+<span class="Identifier">print</span> <span class="Identifier">str</span>(cj)+<span class="Constant">&quot;,&quot;</span>,
+<span class="Comment">#======================fim==================</span>
+</pre>
+                        </section>
+                        <section>
+                            <h2>Modo de operação caótico</h2>
+                            Permite a propagação de erro em um algoritmo de criptografia caótico.
+                        </section>
+                        <section>
+                            <h2>Modo de operação caótico</h2>
+                            <p><img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:500px; vertical-align:middle;" src="imgs/algModoDeOperacaoP1.svg"> </p>
+                        </section>
+                        <section>
+                            <h2>Modo de operação caótico</h2>
+                            <p><img style="padding-left:3%; border: none; background: none; margin: 0px; box-shadow: none; width:800px; vertical-align:middle;" src="imgs/algModoDeOperacaoP2.svg"> </p>
+                        </section>
+                        <section>
+                            <h2>Trabalhos futuros</h2>
+                            <ul>
+                                <li>Uso de equações caóticas com mais variáveis.</li>
+                                <li>Uso de descritores de caos em algoritmos de criptografia clássicos.</li>
+                                <li>Criação de algoritmos de chave pública caóticos.</li>
+                            <li>Criação de algoritmos de hash caóticos.</li>
+                            </ul>
+                        </section>
+                </section>
+			</div>
+                        
+		</div>
+                
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+                    
+		    // Full list of configuration options available here:
+		    // https://github.com/hakimel/reveal.js#configuration
+		    Reveal.initialize({
+		    controls: true,
+				progress: true,
+		    history: true,
+		    center: true,
+                    slideNumber: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+		    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                    
+		    // Optional libraries used to extend on reveal.js
+				dependencies: [
+		    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+		    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                  
+		    ]
+		    });
+                    
+		</script>      
+	</body>
+</html>
